@@ -1,0 +1,311 @@
+@font-face {
+        font-family: "poppins";
+        src: url(./poppins/Poppins-Light.ttf);
+}
+
+* {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+}
+body {
+        font-family: "poppins";
+        background-image: url(./images/inscription.jpg);
+        background-size: cover;
+        width: 100vw;
+        height: 100vh;
+}
+
+/* Nabar */
+.navbar {
+        display: flex;
+        width: 100vw;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+}
+
+.navbar .navlinks {
+        display: flex;
+        align-items: center;
+}
+
+.navbar .navlinks li {
+        cursor: pointer;
+}
+
+.navbar .navlinks li a {
+        position: relative;
+        color: #000000;
+        font-size: 1rem;
+        margin: 20px;
+        padding: 10px;
+        transition: 0.5s;
+}
+.navbar .navlinks li a:hover {
+        background-color: #000000;
+        color: white;
+}
+.navbar .navlinks li a::after {
+        content: "";
+        width: 0%;
+        height: 3px;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.428);
+        transition: width 0.3s;
+}
+.navbar .navlinks li a:hover::after {
+        width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+        .navbar {
+                padding: 30px;
+        }
+        .navlinks {
+                z-index: 999;
+                position: absolute;
+                flex-direction: column;
+                justify-content: center;
+                width: 50vw;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background-color: #ffffff;
+                backdrop-filter: blur(7px);
+                align-items: center;
+                margin-left: -100%;
+                transition: 0.5s;
+                border-right: 10px solid rgb(0, 0, 0);
+                text-align: center;
+        }
+
+        .navlinks li {
+                width: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .navbar .navlinks li a {
+                font-size: 1.4rem;
+                color: rgb(0, 0, 0);
+        }
+        .navbar .navlinks li a::after {
+                columns: #fff;
+        }
+}
+
+/* Menu-Burger */
+.burger {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        right: 30px;
+        display: none;
+}
+.burger span {
+        width: 100%;
+        height: 4px;
+        display: block;
+}
+
+.burger span {
+        width: 100%;
+        height: 4px;
+        background-color: rgb(0, 0, 0);
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: backgroud-color 0.5s ease-in-out;
+}
+.burger span::before,
+.burger span::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: rgb(0, 0, 0);
+        transition: 0.5s;
+}
+.burger span::before {
+        transform: translateY(-10px);
+}
+.burger span::after {
+        transform: translateY(10px);
+}
+.cross span {
+        background-color: transparent;
+}
+.cross span:before {
+        transform: rotate(45deg);
+        background-color: rgb(0, 0, 0);
+}
+.cross span:after {
+        transform: rotate(-45deg);
+        background-color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1200px) {
+        .burger {
+                display: block;
+        }
+        .mobile-menu {
+                margin-left: 0;
+        }
+}
+section {
+        text-align: center;
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+/* Formulaire login */
+.login {
+        padding: 20px 50px;
+        width: 50%;
+        background-color: #ffffff;
+        backdrop-filter: blur(7px);
+        line-height: 1;
+        display: flex;
+        flex-direction: column;
+}
+.login label {
+        font-size: 1.2rem;
+        font-family: Arial, Helvetica, sans-serif;
+}
+.login h1 {
+        font-size: 2rem;
+        padding: 20px;
+}
+.login h2 {
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+}
+.login input {
+        display: block;
+        margin: 20px auto;
+        outline: none;
+        background-color: rgb(240, 238, 238);
+        border-color: transparent;
+        color: rgb(0, 0, 0);
+        text-align: center;
+        padding: 5px 5px;
+        width: 80%;
+        border: 2px solid rgb(221, 220, 220);
+        font-size: 1.2rem;
+}
+
+.login input[type="submit"],
+.login input[type="reset"] {
+        background-color: transparent;
+        color: rgb(0, 0, 0);
+        padding: 10px;
+        border: 3px solid #000000;
+        transition: 0.5s;
+        margin: 5px;
+        width: 30%;
+}
+.login input[type="submit"]:hover,
+.login input[type="reset"]:hover {
+        background-color: rgb(0, 0, 0);
+        transform: scale(1.1);
+        color: rgb(255, 255, 255);
+}
+.options {
+        display: flex;
+        justify-content: center;
+}
+
+.login a {
+        font-size: 1rem;
+        color: rgb(255, 255, 255);
+        background-color: rgb(255, 255, 255);
+        padding: 20px;
+}
+
+.login .input-text {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+}
+
+.login .input-password {
+        position: relative;
+        display: flex;
+        align-items: center;
+}
+
+.close-login {
+        background-color: transparent;
+        border: 0;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+}
+.login div {
+        display: flex;
+        justify-content: center;
+}
+.eye {
+        background-color: transparent;
+        border: none;
+        padding: 10px;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+}
+#eye {
+        display: flex;
+        height: 25px;
+        width: 25px;
+}
+.login .identifiant {
+        display: flex;
+        flex-direction: column;
+}
+.input-text p {
+        font-size: 15px;
+        padding: 5px;
+}
+::placeholder {
+        color: rgb(0, 0, 0);
+        background-color: white;
+}
+@media screen and (max-width: 960px) {
+        .login {
+                width: 60%;
+                justify-content: space-evenly;
+        }
+        .login h1 {
+                font-size: 1.3rem;
+        }
+
+        .login input[type="text"],
+        .login input[type="password"] {
+                width: 100%;
+        }
+}
+@media screen and (max-width: 600px) {
+        .login {
+                width: 100%;
+                height: 80vh;
+        }
+}
+@media screen and (max-height: 600px) {
+        .login h1 {
+                font-size: 1rem;
+        }
+}
