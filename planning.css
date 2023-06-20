@@ -1,0 +1,191 @@
+@font-face {
+        font-family: "poppins";
+        src: url(./poppins/Poppins-Light.ttf);
+}
+
+* {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+}
+
+body {
+        font-family: "poppins";
+}
+
+/* Nabar */
+.navbar {
+        z-index: 999;
+        display: flex;
+        width: 100vw;
+        background-color: #ffffff;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+}
+
+.navbar .navlinks {
+        display: flex;
+        align-items: center;
+}
+
+.navbar .navlinks li {
+        cursor: pointer;
+}
+
+.navbar .navlinks li a {
+        position: relative;
+        color: #000000;
+        font-size: 1rem;
+        margin: 20px;
+        padding: 10px;
+        transition: 0.5s;
+}
+.navbar .navlinks li a:hover {
+        background-color: #000000;
+        color: white;
+}
+
+.navbar .navlinks li a::after {
+        content: "";
+        width: 0%;
+        height: 3px;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.428);
+        transition: width 0.3s;
+}
+.navbar .navlinks li a:hover::after {
+        width: 50%;
+}
+
+@media screen and (max-width: 1200px) {
+        .navbar {
+                padding: 30px;
+        }
+        .navlinks {
+                z-index: 999;
+                position: absolute;
+                flex-direction: column;
+                justify-content: center;
+                width: 50vw;
+                height: 100vh;
+                top: 0;
+                left: 0;
+                background-color: #ffffff;
+                backdrop-filter: blur(7px);
+                align-items: center;
+                margin-left: -100%;
+                transition: 0.5s;
+                border-right: 10px solid rgb(0, 0, 0);
+                text-align: center;
+        }
+
+        .navlinks li {
+                width: 100%;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        }
+        .navbar .navlinks li a {
+                font-size: 1.4rem;
+                color: rgb(0, 0, 0);
+                padding: 20px;
+        }
+
+        .navbar .navlinks li a::after {
+                columns: #fff;
+        }
+}
+
+/* Menu-Burger */
+.burger {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        right: 30px;
+        display: none;
+}
+.burger span {
+        width: 100%;
+        height: 4px;
+        display: block;
+}
+
+.burger span {
+        width: 100%;
+        height: 4px;
+        background-color: rgb(0, 0, 0);
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: backgroud-color 0.5s ease-in-out;
+}
+.burger span::before,
+.burger span::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background: rgb(0, 0, 0);
+        transition: 0.5s;
+}
+.burger span::before {
+        transform: translateY(-10px);
+}
+.burger span::after {
+        transform: translateY(10px);
+}
+.cross span {
+        background-color: transparent;
+}
+.cross span:before {
+        transform: rotate(45deg);
+        background-color: rgb(0, 0, 0);
+}
+.cross span:after {
+        transform: rotate(-45deg);
+        background-color: rgb(0, 0, 0);
+}
+
+@media screen and (max-width: 1200px) {
+        .burger {
+                display: block;
+        }
+        .mobile-menu {
+                margin-left: 0;
+        }
+}
+
+section {
+        background-image: url(./images/laptop.jpg);
+        background-size: cover;
+        padding: 20px;
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+}
+.planning-table {
+        border-collapse: collapse;
+        width: 80%;
+        background-color: #ffffff85;
+}
+
+.planning-table th,
+.planning-table td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: center;
+}
+.weekend {
+        background-color: #020202;
+}
